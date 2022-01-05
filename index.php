@@ -1,4 +1,7 @@
-
+<?php 
+require 'functions.php';
+$xmen = query("SELECT * FROM xmendb");
+?>
 <!doctype html>
 <html lang="en">
 <head><meta charset="us-ascii">
@@ -103,52 +106,20 @@
                         <th>Action</th>
                     </tr>
                     </thead>
+                    <?php $i = 1; ?>
+                    <?php foreach($xmen as $row){    ?>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Proffesor X</td>
-                        <td>Laki-laki</td>
+                        <td><?=$i ?></td>
+                        <td><?=$row["nama"];?></td>
+                        <td><?=$row["jk"];?></td>
                         <td>
                             <a href="#" class="btn btn-primary">View Detail</a>
                             <button class="btn btn-danger">Hapus</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Wolverine</td>
-                        <td>Laki-laki</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">View Detail</a>
-                            <button class="btn btn-danger">Hapus</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Raven</td>
-                        <td>Perempuan</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">View Detail</a>
-                            <button class="btn btn-danger">Hapus</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Beast</td>
-                        <td>Laki-laki</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">View Detail</a>
-                            <button class="btn btn-danger">Hapus</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Storm</td>
-                        <td>Perempuan</td>
-                        <td>
-                            <a href="#" class="btn btn-primary">View Detail</a>
-                            <button class="btn btn-danger">Hapus</button>
-                        </td>
-                    </tr>
+                    <?php $i++;?>
+                    <?php };?>
                     </tbody>
                 </table>
             </div>
