@@ -1,6 +1,10 @@
 <?php 
 require 'functions.php';
 $xmen = query("SELECT * FROM xmendb");
+
+if(isset($_POST["cari"])){
+    $xmen = cari($_POST["keyword"]);
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -88,10 +92,12 @@ $xmen = query("SELECT * FROM xmendb");
                             <i class="fa fa-search"></i>
                         </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Pencarian" aria-describedby="basic-addon1">
+                    <form action="" method="post">
+                    <input type="text" name="keyword" class="form-control" placeholder="Pencarian" aria-describedby="basic-addon1">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Cari</button>
+                    <button class="btn btn-outline-secondary" type="submit" name="cari">Cari</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

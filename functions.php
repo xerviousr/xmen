@@ -13,6 +13,15 @@ function query($query) {
 
 }
 
+function cari($keyword) {
+    $query = "SELECT * FROM xmendb
+                WHERE
+                nama = '$keyword'
+                ";
+    return query($query);
+}
+
+
 
 
 ?>
