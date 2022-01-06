@@ -120,7 +120,7 @@ if(isset($_POST["cari"])){
                         <td><?=$row["nama"];?></td>
                         <td><?=$row["jk"];?></td>
                         <td>
-                            <a href="#" class="btn btn-primary">View Detail</a>
+                            <a href="#task2" class="btn btn-primary">View Detail</a>
                             <button class="btn btn-danger">Hapus</button>
                         </td>
                     </tr>
@@ -155,10 +155,10 @@ if(isset($_POST["cari"])){
 
         <div class="row">
             <div class="col-md-8">
-                <h3>Task #2 Detail Superhero: <?=  $row["nama"]?></h3>
+                <h3 id="task2">Task #2 Detail Superhero: <?=  $row["nama"]?></h3>
             </div>
             <div class="col-md-4  text-right">
-                <button class="btn btn-primary">Edit</button>
+            <a href="tambah.php" class="btn btn-primary">Edit</a>
             </div>
         </div>
         <div class="row">
@@ -172,7 +172,7 @@ if(isset($_POST["cari"])){
                     <tr>
                         <td>Nama</td>
                         <td>
-                            <input type="text" class="form-control" value=<?= $row["nama"]?>>
+                            <input type ="text" class="form-control" value=<?= $row["nama"]?>>
                         </td>
                     </tr>
                     <tr>
@@ -188,7 +188,7 @@ if(isset($_POST["cari"])){
                     <th>No</th>
                     <th>Skill</th>
                     <th>
-                        <button class="btn btn-primary btn-small">Tambah Skill</button>
+                        <a href="tambah.php" class="btn btn-primary">Tambah Skill</a>
                     </th>
                     </thead>
                     <tbody>
